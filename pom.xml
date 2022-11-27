@@ -17,11 +17,11 @@
 
     <modules>
         <module>naming-server</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
         <java.version>17</java.version>
-        <project.version>1.0</project.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
     </properties>
 

@@ -1,0 +1,128 @@
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.row-center {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 1rem 1.5rem;
+    margin: 3rem auto;
+    box-shadow: 5px 5px 10px #c4c4c4;
+    background: #fcfcfc;
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.navbar img.logo {
+    max-height: 3rem;
+    background: #fff;
+    border-radius: 5rem;
+    padding: 0.2rem;
+}
+
+.card-logo {
+    width: 7rem;
+    background: #fff;
+    border-radius: 5rem;
+    padding: 0.2rem;
+    margin: 1rem auto;
+    border: 0.1rem solid #ddd;
+}
+
+.form-validate-input .alert-danger {
+    background-color: transparent !important;
+    color: red !important;
+    padding: 0;
+    border: 0;
+}
+
+.font-xs {
+    font-size: 0.8rem;
+}
+
+.authorities ul li {
+    color: darkslategray;
+    font-size: 0.9rem;
+}
+
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.p-modal {
+    border-top: 0.5rem solid #ffc107;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    opacity: 0.98;
+}
+
+.btn-close-modal {
+    position: absolute;
+    top: 29px;
+    right: 0;
+    padding: 0.5rem 0.9rem;
+    z-index: 2;
+    border-radius: 5rem;
+    border: 2px solid #ddd;
+    background: #777;
+}
+
+.error-page {
+    color: #35495e;
+}
+
+.error-page h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+ul.flags {
+    margin:0;
+    padding: 0;
+}
+
+.lang-link {
+    opacity: 0.4;
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    margin: 0.2rem;
+}
+
+.lang-link[selected] {
+    opacity: 1;
+    cursor: default;
+}
+
+.lang-link img {
+    color: #34485d;
+    width: 24px;
+}
+

@@ -8,7 +8,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TaskResponse extends TaskCreationRequest {
     private String id;
     private Date createdDate;

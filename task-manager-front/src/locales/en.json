@@ -1,0 +1,46 @@
+{
+  "menu": {
+    "en": "English",
+    "de": "German",
+    "tasks": "Tasks",
+    "admin": "Admin",
+    "user": "User",
+    "create": "New task",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "title": "Title",
+  "description": "Description",
+  "taskTime": "Task Time",
+  "username": "Username",
+  "password": "Password",
+  "authorities" : "Authorities",
+  "refreshToken" : "RefreshToken",
+  "token" : "Token",
+  "profile" : "Profile",
+  "accessDenied" : "Access Denied!",
+  "pageNotFound" : "Page not found!",
+  "you-are-editing-task" : "You are editing task ",
+  "this-is-public-page" : "This is a public page and it's accessible for all viewers! ",
+  "you-have-full-access" : "You are logged in as a Quality Manager, Now you have full access permission! ",
+  "password-is-required" : "Password is required! ",
+  "username-is-required" : "Username is required!",
+
+  "btn": {
+    "login": "Login",
+    "save": "Save",
+    "update": "Update",
+    "edit": "Edit",
+    "delete": "Delete",
+    "reset": "Reset"
+  },
+  "tbl": {
+    "id": "ID",
+    "title": "Title",
+    "description": "Description",
+    "taskTime": "Task Time",
+    "createdDate": "Create Date",
+    "createdBy": "Create By",
+    "action": "Action"
+  }
+}

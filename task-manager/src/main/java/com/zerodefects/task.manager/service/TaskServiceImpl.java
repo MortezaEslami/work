@@ -55,7 +55,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskModel> list() {
-        return StreamSupport.stream(repository.findAll().spliterator(), false)
+        return StreamSupport.stream(repository.findAllByOrderByCreatedDateDesc().spliterator(), false)
                 .map(mapper::entityToServiceModel)
                 .collect(Collectors.toList());
     }

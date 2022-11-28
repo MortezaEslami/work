@@ -4,13 +4,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TaskResponse extends TaskCreationRequest {
+public class TaskAttachmentResponse extends TaskAttachmentCreationRequest {
     private String id;
-    private Date createdDate;
-    private String createdBy;
+    private String name;
+    private String type;
+    private byte[] data;
 }

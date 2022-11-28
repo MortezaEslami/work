@@ -17,9 +17,7 @@ public class TaskAttachment {
     @Id
     private String id;
     private String name;
-
     private String type;
-
     @Lob
     private byte[] data;
     private String taskId;

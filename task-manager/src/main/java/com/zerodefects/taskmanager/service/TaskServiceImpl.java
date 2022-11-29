@@ -29,11 +29,15 @@ public class TaskServiceImpl implements TaskService {
     public TaskModel create(TaskModel serviceModel) {
         Task entity = mapper.serviceModelToEntity(serviceModel);
         entity.setCreatedDate(new Date());
-        String username = ((SimpleKeycloakAccount) SecurityContextHolder.getContext().getAuthentication().getDetails())
-                .getKeycloakSecurityContext().getToken().getPreferredUsername();
+        String username = getCurrentUserUsername();
         entity.setCreatedBy(username);
         entity = repository.save(entity);
         return mapper.entityToServiceModel(entity);
+    }
+
+    public String getCurrentUserUsername() {
+        return ((SimpleKeycloakAccount) SecurityContextHolder.getContext().getAuthentication().getDetails())
+                .getKeycloakSecurityContext().getToken().getPreferredUsername();
     }
 
     @Transactional

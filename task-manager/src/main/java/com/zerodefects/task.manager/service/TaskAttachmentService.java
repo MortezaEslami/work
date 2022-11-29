@@ -11,10 +11,7 @@ public interface TaskAttachmentService {
 
     TaskAttachmentModel get(String id);
 
-    void delete(String id);
+    boolean delete(String id);
 
     List<TaskAttachmentModel> list(String id);
-
-
-
 }

@@ -38,19 +38,16 @@ public class TaskServiceImpl implements TaskService {
 
     @Transactional
     @Override
-    public void update(TaskModel serviceModel) {
-        Optional.of(repository
-                        .findById(serviceModel.getId()))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .map(directory -> {
-                    directory.setId(serviceModel.getId());
-                    directory.setTitle(serviceModel.getTitle());
-                    directory.setDescription(serviceModel.getDescription());
-                    directory.setTaskTime(serviceModel.getTaskTime());
-                    repository.save(directory);
-                    return directory;
-                });
+    public boolean update(TaskModel serviceModel) {
+        Optional<Task> byId = repository.findById(serviceModel.getId());
+        byId.ifPresent(item -> {
+            item.setId(serviceModel.getId());
+            item.setTitle(serviceModel.getTitle());
+            item.setDescription(serviceModel.getDescription());
+            item.setTaskTime(serviceModel.getTaskTime());
+            repository.save(item);
+        });
+        return byId.isPresent();
     }
 
     @Override
@@ -63,16 +60,16 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskModel get(String id) {
         Optional<Task> byId = repository.findById(id);
-        //todo : throws exception
         return byId.map(mapper::entityToServiceModel).orElse(null);
     }
 
     @Override
-    public void delete(String id) {
+    public boolean delete(String id) {
         if (repository.findById(id).isPresent()) {
             repository.deleteById(id);
+            return true;
         } else {
-            // todo : throws exception
+            return false;
         }
     }
 }

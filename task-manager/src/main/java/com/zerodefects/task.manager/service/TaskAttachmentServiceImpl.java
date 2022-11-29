@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -31,16 +30,16 @@ public class TaskAttachmentServiceImpl implements TaskAttachmentService {
     @Override
     public TaskAttachmentModel get(String id) {
         Optional<TaskAttachment> byId = repository.findById(id);
-        //todo : throws exception
         return byId.map(mapper::entityToServiceModel).orElse(null);
     }
 
     @Override
-    public void delete(String id) {
+    public boolean delete(String id) {
         if (repository.findById(id).isPresent()) {
             repository.deleteById(id);
+            return true;
         } else {
-            // todo : throws exception
+            return false;
         }
     }
 
@@ -51,7 +50,7 @@ public class TaskAttachmentServiceImpl implements TaskAttachmentService {
         taskAttachmentModelList.forEach(item -> item.setData(null));
         return taskAttachmentModelList.stream()
                 .map(mapper::entityToServiceModel)
-                .collect(Collectors.toList());
+                .toList();
     }
 
 }

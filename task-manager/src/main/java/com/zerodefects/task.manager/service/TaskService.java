@@ -8,11 +8,11 @@ import java.util.List;
 public interface TaskService {
     TaskModel create(@Validated TaskModel serviceModel);
 
-    void update(@Validated TaskModel serviceModel);
+    boolean update(@Validated TaskModel serviceModel);
 
     List<TaskModel> list();
 
     TaskModel get(String id);
 
-    void delete(String id);
+    boolean delete(String id);
 }

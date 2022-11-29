@@ -29,7 +29,7 @@ services:
     image: mongo
     restart: always
     ports:
-      - 27017:27017
+      - "27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -39,9 +39,9 @@ services:
       - "8080"
     environment:
       - APP_SLEEP=180
-#      - SPRING_DATASOURCE_URL=jdbc:mysql://ams-db:3306/ams_stage
     depends_on:
       - naming-server
+      - gateway
       - mongo
       - keycloak
     networks:
@@ -54,6 +54,8 @@ services:
       - APP_SLEEP=180
     depends_on:
       - naming-server
+      - keycloak
+      - gateway
     networks:
       - spring-cloud-network
       - keycloak
@@ -61,7 +63,7 @@ services:
     image: gateway:1.0.0
     container_name: gateway
     ports:
-      - "8765:8765"
+      - "8765"
     depends_on:
       - naming-server
     networks:
@@ -71,7 +73,20 @@ services:
     image: naming-server:1.0.0
     container_name: naming-server
     ports:
-      - "8761:8761"
+      - "8761"
+    networks:
+      - spring-cloud-network
+  task-manager-front:
+    image: task-manager-front:1.0.0
+    container_name: task-manager-front
+    ports:
+      - "8761"
+    depends_on:
+      - naming-server
+      - gateway
+      - user-manager
+      - mongo
+      - keycloak
     networks:
       - spring-cloud-network
 

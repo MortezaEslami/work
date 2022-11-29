@@ -22,6 +22,6 @@ public class TaskAttachment {
     private byte[] data;
 
     @DBRef
-    private String task;
+    private Task task;
 
 }

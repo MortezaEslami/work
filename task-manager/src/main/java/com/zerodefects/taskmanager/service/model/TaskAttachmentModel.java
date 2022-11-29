@@ -15,7 +15,6 @@ public class TaskAttachmentModel {
 
     private String type;
 
-    @Lob
     private byte[] data;
     private String taskId;
 }

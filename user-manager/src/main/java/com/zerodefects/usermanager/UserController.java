@@ -31,7 +31,7 @@ public class UserController {
 
         MultiValueMap<String, String> mapForm = new LinkedMultiValueMap<>();
         mapForm.add("grant_type", "password");
-        mapForm.add("client_id", "app-work");
+        mapForm.add("client_id", "task-manager");
         mapForm.add("username", loginDTO.getUsername());
         mapForm.add("password", loginDTO.getPassword());
         mapForm.add("client_secret", "secret");

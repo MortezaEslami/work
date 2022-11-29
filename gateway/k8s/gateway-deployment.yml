@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-deployment
+  labels:
+    app: gateway
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: gateway
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      serviceAccountName: api-reader
+      containers:
+      - name: gateway
+        image: GATEWAY_DOCKER_IMAGE_ADDRESS
+        ports:
+        - containerPort: 8765
+      imagePullSecrets:
+      - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+spec:
+  selector:
+    app: gateway
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 7065
+      targetPort: 8765
+

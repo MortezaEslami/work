@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: naming-server-deployment
+  labels:
+    app: naming-server
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: naming-server
+  template:
+    metadata:
+      labels:
+        app: naming-server
+    spec:
+      serviceAccountName: api-reader
+      containers:
+      - name: naming-server
+        image: NAMING_SERVER_DOCKER_IMAGE_ADDRESS
+        ports:
+        - containerPort: 8761
+      imagePullSecrets:
+      - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: naming-server-service
+spec:
+  selector:
+    app: naming-server
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 7061
+      targetPort: 8761
+

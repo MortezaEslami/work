@@ -2,7 +2,7 @@ package com.zerodefects.taskmanager.repository.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.bson.types.Binary;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
@@ -20,6 +20,8 @@ public class TaskAttachment {
     private String type;
     @Lob
     private byte[] data;
-    private String taskId;
+
+    @DBRef
+    private String task;
 
 }

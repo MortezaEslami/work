@@ -48,7 +48,7 @@
   },
   "clients": [
     {
-      "clientId": "task-manager",
+      "clientId": "user-manager",
       "enabled": true,
       "baseUrl": "http://localhost:8080",
       "adminUrl": "http://localhost:8080",

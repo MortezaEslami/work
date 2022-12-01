@@ -5,7 +5,6 @@
     "tasks": "Tasks",
     "admin": "Admin",
     "user": "User",
-    "create": "New task",
     "login": "Login",
     "logout": "Logout"
   },
@@ -32,7 +31,9 @@
     "update": "Update",
     "edit": "Edit",
     "delete": "Delete",
-    "reset": "Reset"
+    "reset": "Reset",
+    "create": "New task",
+    "search": " Search"
   },
   "tbl": {
     "id": "ID",

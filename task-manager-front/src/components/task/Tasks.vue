@@ -10,15 +10,15 @@
     </div>
     <div class="col-12" style="height: 30px">
       <div class="float-left col-6 col-sm-6" style="height: 40px">
-        <button v-if="isAdminUser" class="btn btn-primary" @click="openNewTask"> New Task</button>
+        <button v-if="isAdminUser" class="btn btn-primary" @click="openNewTask">{{ $t('btn.create') }}</button>
       </div>
       <div class="float-right col-6 col-sm-6" style="height: 20px">
-        <div class="col-4 float-left">
-          <label for="taskId">
-            {{ $t('id') }}
+        <div class="col-2 float-left">
+          <label for="taskId" style="font-weight: bold">
+            {{ $t('tbl.id') }}
           </label>
         </div>
-        <div class="col-4 float-left">
+        <div class="col-8 float-left">
           <input
               type="text"
               class="form-control"
@@ -26,8 +26,8 @@
               id="taskId"
           />
         </div>
-        <div class="col-4 float-right">
-          <button class="btn btn-info" @click="search"> Search</button>
+        <div class="col-2 float-right">
+          <button class="btn btn-info" @click="search"> {{ $t('btn.search') }}</button>
         </div>
 
       </div>

@@ -5,5 +5,5 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-EXPOSE 80
+EXPOSE 8766
 CMD [ "http-server", "dist" ]

@@ -23,7 +23,7 @@
               <label for="description">
                 {{$t('description')}}
               </label>
-              <input
+              <textarea
                   v-model="task.description"
                   v-validate="'required|max:50'"
                   type="text"

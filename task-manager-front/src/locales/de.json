@@ -5,7 +5,6 @@
     "tasks": "Aufgaben",
     "admin": "Admin",
     "user": "Benutzer",
-    "create": "Neue Aufgabe",
     "login": "Einloggen",
     "logout": "Abmelden"
   },
@@ -32,7 +31,9 @@
     "update": "Aktualisieren",
     "edit": "Bearbeiten",
     "delete": "Löschen",
-    "reset": "zurücksetzen"
+    "reset": "zurücksetzen",
+    "create": "Neue Aufgabe",
+    "search": " Suche"
   },
   "tbl": {
     "id": "ID",

@@ -1,0 +1,46 @@
+{
+  "menu": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "tasks": "Aufgaben",
+    "admin": "Admin",
+    "user": "Benutzer",
+    "create": "Neue Aufgabe",
+    "login": "Einloggen",
+    "logout": "Abmelden"
+  },
+  "title": "Titel",
+  "description": "Beschreibung",
+  "taskTime": "Aufgabenzeit",
+  "username": "Benutzername",
+  "password": "Passwort",
+  "authorities" : "Behörden",
+  "refreshToken" : "Aktualisierungstoken",
+  "token" : "Token",
+  "profile" : "Profil",
+  "accessDenied" : "Zugriff verweigert!",
+  "pageNotFound" : "Seite nicht gefunden!",
+  "you-are-editing-task" : "Sie bearbeiten eine Aufgabe ",
+  "this-is-public-page" : "Dies ist eine öffentliche Seite und sie ist für alle Zuschauer zugänglich! ",
+  "you-have-full-access" : "Sie sind als Qualitätsmanager angemeldet, jetzt haben Sie volle Zugriffsrechte! ",
+  "password-is-required" : "Passwort ist erforderlich!",
+  "username-is-required" : "Benutzername ist erforderlich!",
+
+  "btn": {
+    "login": "Einloggen",
+    "save": "Speichern",
+    "update": "Aktualisieren",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "reset": "zurücksetzen"
+  },
+  "tbl": {
+    "id": "ID",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "taskTime": "Aufgabenzeit",
+    "createdDate": "Erstellungsdatum",
+    "createdBy": "Erstellen von",
+    "action": "Aktion"
+  }
+}

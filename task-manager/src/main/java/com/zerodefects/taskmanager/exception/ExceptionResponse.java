@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,11 +14,13 @@ import java.util.Locale;
 @Setter
 @Builder
 public class ExceptionResponse {
+    private Date timestamp;
     private String fingerPrint;
     private String type;
     private String detail;
     private String instance;
     private String title;
     private int status;
+    private List<ErrorField> errorFields;
 
 }

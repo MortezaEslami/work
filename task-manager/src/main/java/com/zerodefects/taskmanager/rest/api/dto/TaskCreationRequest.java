@@ -2,17 +2,21 @@ package com.zerodefects.taskmanager.rest.api.dto;
 
 
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 public class TaskCreationRequest {
 
-    @NonNull
+    @NotNull
+    @NotBlank
     private String title;
 
-    @NonNull
+    @NotNull
+    @NotBlank
     private String description;
     private Integer taskTime;
 

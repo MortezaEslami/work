@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import EventBus from "./common/EventBus";
 import AuthService from './services/auth-service';
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { i18n } from './i18n';

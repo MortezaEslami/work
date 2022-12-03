@@ -1,3 +1,4 @@
+/*
 package com.zerodefects.taskmanager.rest.api.facade;
 
 import com.zerodefects.taskmanager.rest.api.dto.TaskAttachmentCreationRequest;
@@ -65,3 +66,4 @@ public class TaskAttachmentFacadeTest {
         assertEquals(modelResponse, id);
     }
 }
+*/

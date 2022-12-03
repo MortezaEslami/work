@@ -6,7 +6,6 @@
         <groupId>com.zerodefects</groupId>
         <artifactId>work</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zerodefects</groupId>
     <artifactId>user-manager</artifactId>

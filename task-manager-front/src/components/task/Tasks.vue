@@ -108,7 +108,6 @@
 import TaskService from '../../services/task-service';
 import UpdateTask from "@/components/task/UpdateTask";
 import ErrorPartial from "@/components/error/ErrorPartial";
-import EventBus from "@/common/EventBus";
 import {i18n} from "@/i18n";
 
 export default {

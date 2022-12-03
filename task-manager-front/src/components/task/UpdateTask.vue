@@ -66,7 +66,6 @@
 
 <script>
 import TaskService from "@/services/task-service";
-import EventBus from "@/common/EventBus";
 
 export default {
   name: "UpdateTask",

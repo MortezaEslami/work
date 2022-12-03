@@ -10,6 +10,8 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
+    networks:
+      - spring-cloud-network
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     command: start-dev
@@ -22,21 +24,25 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: Pa55w0rd
     ports:
-      - 8180:8080
+      - "8180:8080"
     depends_on:
       - postgres
+    networks:
+      - spring-cloud-network
   mongo:
     image: mongo
     restart: always
     ports:
-      - "27017"
+      - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - spring-cloud-network
   task-manager:
     image: task-manager:1.0.0
     ports:
-      - "8080"
+      - "8080:8080"
     environment:
       - APP_SLEEP=180
     depends_on:
@@ -49,7 +55,7 @@ services:
   user-manager:
     image: user-manager:1.0.0
     ports:
-      - "8083"
+      - "8083:8083"
     environment:
       - APP_SLEEP=180
     depends_on:
@@ -58,14 +64,15 @@ services:
       - gateway
     networks:
       - spring-cloud-network
-      - keycloak
   gateway:
     image: gateway:1.0.0
     container_name: gateway
     ports:
-      - "8765"
+      - "8765:8765"
     depends_on:
       - naming-server
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka
     networks:
       - spring-cloud-network
 
@@ -73,14 +80,18 @@ services:
     image: naming-server:1.0.0
     container_name: naming-server
     ports:
-      - "8761"
+      - "8761:8761"
     networks:
       - spring-cloud-network
   task-manager-front:
-    image: task-manager-front:1.0.0
+    image: task-manager-front:latest
     container_name: task-manager-front
+    build: services/vue
+    volumes:
+      - ./task-manager-front:/app
+      - /app/node_modules
     ports:
-      - "8761"
+      - "8766:8766"
     depends_on:
       - naming-server
       - gateway

@@ -19,7 +19,7 @@ spec:
       - name: task-manager-front
         image: TASK_MANAGER_FRONT_DOCKER_IMAGE_ADDRESS
         ports:
-        - containerPort: 80
+        - containerPort: 8766
       imagePullSecrets:
       - name: regcred
 
@@ -34,6 +34,6 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 8766
+      targetPort: 8766
 

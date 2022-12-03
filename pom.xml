@@ -19,6 +19,7 @@
         <module>naming-server</module>
         <module>gateway</module>
         <module>user-manager</module>
+        <module>task-manager</module>
     </modules>
 
     <properties>

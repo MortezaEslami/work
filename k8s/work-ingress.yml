@@ -9,10 +9,10 @@ spec:
     - host: work.com
       http:
         paths:
-          - path: /task-manager-front
+          - path: /gateway-service
             pathType: Prefix
             backend:
               service:
-                name: task-manager-front-service
+                name: gateway-service
                 port:
-                  number: 80
+                  number: 8765

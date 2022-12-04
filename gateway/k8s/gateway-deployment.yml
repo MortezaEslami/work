@@ -34,6 +34,6 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 7065
+      port: 8765
       targetPort: 8765
 

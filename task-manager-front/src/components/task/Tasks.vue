@@ -157,6 +157,9 @@ export default {
     },
     search() {
       this.loading = false;
+      if (this.isAdminUser && (document.getElementById('taskId').value == null || document.getElementById('taskId').value == '')) {
+        this.getTasks();
+      }else{
       TaskService.getTaskById(document.getElementById('taskId').value).then(
           response => {
             this.tasks = new Array(response.data);
@@ -169,6 +172,7 @@ export default {
                   error.toString();
           }
       );
+    }
     },
     deleteTask(_task, _index) {
       this.indexClicked = _index;
@@ -185,9 +189,6 @@ export default {
                 error.message ||
                 error.toString()
             );
-            if (error.response && error.response.status === 403) {
-              EventBus.dispatch("logout");
-            }
           }
       );
     },

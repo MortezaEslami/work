@@ -23,6 +23,14 @@ class TaskService {
         return api.put('/task-manager/api/v1/tasks/'+task.id, data);
     }
 
+    create(task) {
+        return api.post('/task-manager/api/v1/tasks', {
+            title: task.title,
+            description: task.description,
+            taskTime: task.taskTime
+        });
+    }
+
 
 }
 

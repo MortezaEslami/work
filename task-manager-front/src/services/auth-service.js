@@ -21,14 +21,6 @@ class AuthService {
     userLogout() {
         return api.post('/user-manager/api/v1/users/logout');
     }
-
-    create(task) {
-        return api.post('/task-manager/api/v1/tasks', {
-            title: task.title,
-            description: task.description,
-            taskTime: task.taskTime
-        });
-    }
 }
 
 export default new AuthService();

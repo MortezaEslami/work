@@ -94,9 +94,7 @@ export default {
                 (error.response && error.response.data && error.response.data.message) ||
                 error.message ||
                 error.toString();
-            if (error.response && error.response.status === 403) {
-              EventBus.dispatch("logout");
-            }
+
           }
       );
     },

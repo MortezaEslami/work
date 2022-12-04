@@ -7,7 +7,7 @@
           <div v-if="!successful">
             <div class="form-group form-validate-input">
               <label for="title">
-                {{$t('title')}}
+                {{ $t('title') }}
               </label>
               <input
                   v-model="task.title"
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group form-validate-input">
               <label for="description">
-                {{$t('description')}}
+                {{ $t('description') }}
               </label>
               <textarea
                   v-model="task.description"
@@ -31,11 +31,14 @@
                   name="description"
                   id="description"
               />
-              <div v-if="submitted && errors.has('description')" class="alert-danger">{{ errors.first('description') }}</div>
+              <div v-if="submitted && errors.has('description')" class="alert-danger">{{
+                  errors.first('description')
+                }}
+              </div>
             </div>
             <div class="form-group form-validate-input">
               <label for="taskTime">
-                {{$t('taskTime')}}
+                {{ $t('taskTime') }}
               </label>
               <input
                   v-model="task.taskTime"
@@ -49,7 +52,7 @@
             </div>
             <div class="form-group text-center">
               <button class="btn btn-success">
-                {{$t('btn.save')}}
+                {{ $t('btn.save') }}
               </button>
             </div>
           </div>
@@ -63,6 +66,7 @@
 <script>
 import NewTask from '../models/new-task';
 import {i18n} from "@/i18n";
+import TaskService from "@/services/task-service";
 
 export default {
   name: 'Create',
@@ -85,9 +89,9 @@ export default {
       this.submitted = true;
       this.$validator.validate().then(isValid => {
         if (isValid) {
-          this.$store.dispatch('auth/create', this.task).then(
+          TaskService.create(this.task).then(
               () => {
-                this.$router.push('/' + i18n.locale +"/taskList");
+                this.$router.push('/' + i18n.locale + "/taskList");
               },
               error => {
                 this.message =

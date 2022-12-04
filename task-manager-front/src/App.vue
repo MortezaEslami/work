@@ -56,9 +56,6 @@ export default {
     }
   },
   mounted() {
-    EventBus.on("logout", () => {
-      this.logout();
-    });
   },
   methods: {
     logout() {
@@ -69,7 +66,7 @@ export default {
     }
   },
   beforeDestroy() {
-    EventBus.remove("logout");
+
   }
 };
 </script>

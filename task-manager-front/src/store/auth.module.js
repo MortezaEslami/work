@@ -25,7 +25,7 @@ export const auth = {
             AuthService.logout();
             commit('logout');
         },
-        create({commit}, task) {
+        /*create({commit}, task) {
             return AuthService.create(task).then(
                 response => {
                     commit('createSuccess');
@@ -36,7 +36,7 @@ export const auth = {
                     return Promise.reject(error);
                 }
             );
-        },
+        },*/
         refreshToken({commit}, accessToken) {
             commit('refreshToken', accessToken);
         }
@@ -54,12 +54,12 @@ export const auth = {
             state.status.loggedIn = false;
             state.user = null;
         },
-        createSuccess(state) {
+        /*createSuccess(state) {
             state.status.loggedIn = false;
         },
         createFailure(state) {
             state.status.loggedIn = false;
-        },
+        },*/
         refreshToken(state, accessToken) {
             state.status.loggedIn = true;
             state.user = {...state.user, accessToken: accessToken};

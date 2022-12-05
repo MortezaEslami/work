@@ -14,7 +14,6 @@ spec:
       labels:
         app: task-manager
     spec:
-      serviceAccountName: api-reader
       containers:
       - name: task-manager
         image: TASK_MANAGER_DOCKER_IMAGE_ADDRESS

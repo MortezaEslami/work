@@ -14,7 +14,6 @@ spec:
       labels:
         app: gateway
     spec:
-      serviceAccountName: api-reader
       containers:
       - name: gateway
         image: GATEWAY_DOCKER_IMAGE_ADDRESS

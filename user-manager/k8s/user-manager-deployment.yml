@@ -14,7 +14,6 @@ spec:
       labels:
         app: user-manager
     spec:
-      serviceAccountName: api-reader
       containers:
       - name: user-manager
         image: USER_MANAGER_DOCKER_IMAGE_ADDRESS

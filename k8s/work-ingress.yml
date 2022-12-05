@@ -9,7 +9,7 @@ spec:
     - host: work.com
       http:
         paths:
-          - path: /gateway-service
+          - path: /api
             pathType: Prefix
             backend:
               service:

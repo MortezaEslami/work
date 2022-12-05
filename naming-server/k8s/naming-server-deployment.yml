@@ -14,7 +14,6 @@ spec:
       labels:
         app: naming-server
     spec:
-      serviceAccountName: api-reader
       containers:
       - name: naming-server
         image: NAMING_SERVER_DOCKER_IMAGE_ADDRESS
